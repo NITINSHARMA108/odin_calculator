@@ -155,6 +155,7 @@ function calculate(){
     
     document.getElementById('input').value=operate(operator,operand1,operand2);
     isoperatorPressed=false;
+    operator=null;
 
 
 }
@@ -183,5 +184,7 @@ function operate(operator,v1,v2)
                 else{
                     return 'not suitable operation';
                 }
+        default:window.alert('not applicable');
+                return operand1;
     }
 }
