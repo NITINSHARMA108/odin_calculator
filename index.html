@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Odin Calculator</title>
+</head>
+<body>
+    <h1 class="heading">Odin Calculator</h1>
+    <div class="container">
+        
+        <div class="row">
+            <input style="width:100%;min-height:40px;background-color:#aaaaaa;overflow-x:hidden ;border:1px solid black;border-radius:5px;" id="input" readonly>
+        </div>
+        <div class="row">
+            <div class="column first">
+                <button class="operator" onclick="AC()">AC</button>
+            </div>
+            <div class="column first">
+                <button class="operator" onclick="removeOne()"><i class="fas fa-backspace"></i></button>
+            </div>
+            <div class="column first">
+                <button class="operator" onclick="getPercentage(this)">%</button>
+            </div>
+            
+            
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">1</button>
+            </div>
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">2</button>
+            </div>
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">3</button>
+            </div>
+            <div class="column">
+                <button class="operator" onclick="operatorPressed(this)">/</button>
+            </div>
+            
+            
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">4</button>
+            </div>
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">5</button>
+            </div>
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">6</button>
+            </div>
+            <div class="column">
+                <button class="operator" onclick="operatorPressed(this)">x</button>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">7</button>
+            </div>
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">8</button>
+            </div>
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">9</button>
+            </div>
+            <div class="column">
+                <button class="operator" onclick="operatorPressed(this)">-</button>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">.</button>
+            </div>
+            <div class="column">
+                <button class="number" onclick="appendOnscreen(this)">0</button>
+            </div>
+            
+            <div class="column">
+                <button class="operator" onclick="calculate()">=</button>
+            </div>
+            <div class="column">
+                <button class="operator" onclick="operatorPressed(this)">+</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/script.js"></script>
+</html>
