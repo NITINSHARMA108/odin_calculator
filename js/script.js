@@ -21,11 +21,14 @@ function removeOne(){
     console.log(length);
     if(length>0)
     {
-    document.getElementById('input').value=x.slice(0,length-1);
-    if(operand2==null)
-    {
-        operand1=null;
-    }
+        document.getElementById('input').value=x.slice(0,length-1);
+        if(operand1==null)
+        {
+            operand1=null;
+        }
+        else{
+            operand2=null;
+        }
     }
     else{
         window.alert('cannot remove from empty');
@@ -54,7 +57,7 @@ function operatorPressed(x){
     {
         operand1=document.getElementById('input').value;
         console.log(operand1);
-        if(operand1==0)
+        if(operand1=='')
         {
         console.log('no operand value');
         alert('no operand value');
@@ -182,7 +185,9 @@ function operate(operator,v1,v2)
                     return operand1;
                 }
                 else{
-                    return 'not suitable operation';
+                    window.alert('not suitable operation');
+                    AC();
+                    return '';
                 }
         default:window.alert('not applicable');
                 return operand1;
