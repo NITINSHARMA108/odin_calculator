@@ -9,6 +9,8 @@ function AC(){
      operand1=null;
      operand2=null;
      operator=null;
+     flag=false;
+     isoperatorPressed=true;
     document.getElementById('input').value='';
 }
 //removing the last number that might be incorrectly entered
@@ -98,6 +100,17 @@ function operatorPressed(x){
 
 //append the text in input div 
 function appendOnscreen(x){
+    if(x.innerHTML=='.')
+    {
+        let v=document.getElementById('input').value;
+        let list=v.split('.');
+        if(list.length>1)
+        {
+            window.alert('this operation is not allowed');
+            return;
+        }
+    }
+    
     if(operand1==null)
     {
         let number1=x.innerHTML;
@@ -164,7 +177,8 @@ function operate(operator,v1,v2)
                 return operand1;
         case '/':if(operand1!=0)
                 {
-                    return val1/val2;
+                    operand1=val1/val2;
+                    return operand1;
                 }
                 else{
                     return 'not suitable operation';
