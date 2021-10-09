@@ -71,7 +71,7 @@ function operatorPressed(x){
             operator=null;
             operand1=null;
             isoperatorPressed=false;
-            //flag=true;
+            flag=true;
             return;
         }
         
@@ -88,8 +88,12 @@ function appendOnscreen(x)
 {
     if(x.innerHTML=='%')
     {
-        if(!flag)
-        {
+        /*if(!flag)
+        {*/
+            if(isoperatorPressed==true)
+            {
+                return;
+            }
             if(input.value=='')
             {
                 window.alert('operation not allowed');
@@ -99,7 +103,11 @@ function appendOnscreen(x)
                 input.value=input.value/100;
             }
             return;
-        }
+        /*}
+        else
+        {
+            return;
+        }*/
     }
     if(x.innerHTML=='.')
     {
