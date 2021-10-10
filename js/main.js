@@ -32,6 +32,11 @@ function deleteOne()
 }
 
 function operatorPressed(x){
+    if(flag==true && operator!=null)
+    {
+        window.alert('operator is already pressed!!');
+        return ;
+    }
     if(input.value==='')
     {
         window.alert("couldn't perform action");
@@ -59,12 +64,6 @@ function operatorPressed(x){
     else{
         
         operand2=input.value;
-      
-       
-        
-
-        
-        
         input.value=operate(operator,operand1,operand2);
         if(x.innerHTML=='=')
         {
@@ -145,7 +144,7 @@ function operate(operator,v1,v2)
                 return operand1;
         case 'x':operand1=val1*val2;
                 return operand1;
-        case '/':if(operand1!=0)
+        case '/':if(val2!=0)
                 {
                     operand1=val1/val2;
                     return operand1;
